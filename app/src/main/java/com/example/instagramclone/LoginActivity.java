@@ -63,12 +63,10 @@ public class LoginActivity extends AppCompatActivity {
     private void SignUpUser(String username, String password) {
 
         ParseUser user = new ParseUser();
-        // Set core properties
+
         user.setUsername(username);
         user.setPassword(password);
-        // Set custom properties
-        //user.put("phone", "650-253-0000");
-        // Invoke signUpInBackground
+
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e != null) {
@@ -98,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                 
                 goMainActivity();
                 Toast.makeText(LoginActivity.this, "Successful Login!",Toast.LENGTH_SHORT).show();
-                
+
 
             }
         });
